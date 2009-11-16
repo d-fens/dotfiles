@@ -1,0 +1,39 @@
+# ~/.zsh.aliases
+
+# .zprofile     loaded if login shell
+# .zshenv       always loaded
+# .zshrc        loaded if interactive shell
+
+# general aliases
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias du="du -h"
+alias df="df -h"
+alias more="less"
+
+# windows aliases
+alias cls="clear"
+alias cd..="cd .."
+
+# reload ~/.zshrc
+alias src="source ~/.zshrc; source ~/.zshenv"
+
+# machine specific aliases
+case `uname -m` in
+        x86_64|i686)
+		echo "x86_64|i686"
+        ;;
+        sun4v)
+		echo "sun4v"
+                alias rbmysql='mysql -h 192.168.0.3'
+        ;;
+        *)
+		echo "Unknown OS"
+        ;;
+esac
+
+alias go="screen -Udr"
+
+# __END__
+
